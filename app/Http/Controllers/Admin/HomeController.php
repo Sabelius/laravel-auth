@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
+      /**
      * Create a new controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        // $this->middleware('auth'); rimosso per rendere la pagina home visibile a tutti
+        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('guests.home');
+        return view('admin.home');
     }
 }
